@@ -1,0 +1,43 @@
+
+Name :Natnael Mengesha
+Course:CONSTRUCTION OF LANGUAGE TRANSLATORS 
+Project:No.1
+
+Description
+
+Project, one uses the grammar definition in the appendix of our text book to guide and construct a lexical analyzer. 
+This lexical analyzer will return a token that will serve as input to the parser.
+In order to execute this program, go to an empty dir
+
+Project 1 run by reading each line from a text/input/file.
+The main class passes that file for lexical analysis by calling the parse method the Lexical class.
+This method will read each the parse method calls the Lex() to run lexical analysis. This method will perform the analysis by following this steps;
+o	Check to see if the current line is a comment 
+o	If yes..continue until the end
+o	Go to a while loop to read each character
+o	If the character is tab, space, or new line move to the next value until it is not
+o	If a character is a start of a comment
+o	Check to see if it is a line comment
+o	If yes exist the loop and move to the next line in the file.
+o	if it is a nest loop consume it until you reached the end
+o	if it a character consume the next values until you reach empty/EOL/different char
+o	identify if it is a keyword/Id and print
+o	if it is a number check to see if it a floating number or decimal and print
+o	if there are errors in the process print them.
+o	It uses methods like
+o	Specialsymboleidf-to identify special symbols hard coded into the program
+o	Identify - to know if a work is a keyword or an ID
+o	Error - to print identify and print error strings in the line
+o	Its continues until it reaches EOL 
+ 
+
+
+  
+
+ 
+
+
+
+
+
+

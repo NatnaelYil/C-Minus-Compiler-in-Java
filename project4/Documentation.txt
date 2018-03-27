@@ -1,0 +1,58 @@
+Course: CONSTRUCTION OF LANGUAGE TRANSLATORS 
+Name :Natnael Mengesha
+project:No.2
+
+Description
+
+Project 4, which uses the grammar definition in the appendix of our text book to guide and construct a Syntax analyzer. 
+The syntax analyzer passes tokens to syntax analyzer which then analyzes syntax correctness.it then generates  generate simple quadruples 
+as explained in class.
+
+
+
+
+•	Data Structures used- Stack -> to store special symbols as we go down the tree and to store quadruples
+ -symbol table-  a hash table used to store ID’s after declaration
+•	The program starts my calling declarationlist fun()
+•	Declarationlist- calls variable declaration or function declaration functions
+	-it lists declared variables and functions
+•	Variabledeclaration checks to see if there are any global variables (int , int []) being declared
+	-if array, it lists the displacement in the quadruples
+•	Function declaration checks to see if there is a function declaration and calls compound statement if it finds one
+•	Compoundstmt function checks to see if its a start of a compound statement and calls local declaration and statement list function for analysis.
+	- each declaration is listed in the quadruples
+•	Local declaration checks for local variable declared and if there isn’t any, goes to empty and pass the token to statementlist
+•	Statementlist function checks to see if its and expression statement or a compound statement or selection statement or and iteration statement or a return statement 
+•	Expression statement checks to see if it an expression or ‘ ;’
+	- evaluates mathematical expressions and list them in the quadruples 
+•	Selectionstmt function checks to see if it and ‘if’ statement of and “if…else” statement 
+	- first evaluates the if expression, if true, goes in to execute the statement, if false breaks to else statement
+	 and lists the process in the quadruples
+•	Iterationstmt function checks if its “while” statement
+	- evaluates the expression first then compares the value to be true(goes in the while loop and goes back to the expression to evaluate) or false
+	will break to the outer loop and lists it to the quadruples
+•	Returnstmt function checks if it a return zero or return with an expression
+-	- first evaluate the expression and return is listed to the quadruples
+•	Expression function checks if it is an assignment statement or a simple expression
+•	Simple expression checks if it is an additive expression relop additive expression or just an additive expression
+•	Relop function checks if the current token is of “<=, <, >, >=, ==, !=” used for comparing variables
+•	Additiveexpression function checks of it a term or a an addition expression
+•	Term function checks if it is a factor or mulop statement 
+•	Mulop function checks if it is a multiplication or division expression
+•	Factor checks if it is a parenthesized expression or just a variable or a function call or number
+•	A function call checks if it has an argument or an expression of argument 
+
+
+
+ 
+
+
+  
+
+ 
+
+
+
+
+
+

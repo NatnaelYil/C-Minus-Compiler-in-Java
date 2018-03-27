@@ -1,0 +1,56 @@
+Course: CONSTRUCTION OF LANGUAGE TRANSLATORS 
+Name :Natnael Mengesha
+Project:No.2
+ 
+Description
+
+Project, one uses the grammar definition in the appendix of our text book to guide and construct a Syntax analyzer. 
+This lexical analyzer will return a token that will serve as input to the parser. The parser then takes these token 
+and check whether or not they have syntax correctness and build the symbol table on the way.  The syntax analysis class,
+ if it found the program to be correct, it will print Accept or Reject if the program has an error.
+
+Project 2 runs by taking the tokens from the lexical analysis, the lexical analysis adds ‘$’ character at the end of 
+the token array to tell the parser that it has reached the end of the file/tokens.
+The main class passes that file for lexical analysis by calling the parse method the Lexical class. The lexical analysis
+ then calls syn() method of syntax analyzer class to run the analysis.
+This method will read each tokens passed as an array and perform a top-down parse tree for semantics analysis. 
+This method will perform the analysis by following this steps;
+•	Data Structures used- Stack -> to store special symbols as we go down the tree 
+ 			-symbol table-  a hash table used to store ID’s after declaration
+•	The program starts my calling declarationlist fun()
+•	If it returns true- accept the program or else reject it
+•	Declarationlist- calls variable declaration or function declaration functions
+•	Variabledeclaration checks to see if there are any global variables (int , int []) being declared
+•	Function declaration checks to see if there is a function declaration and calls compound statement if it finds one
+•	Compoundstmt function checks to see if its a start of a compound statement and calls local declaration 
+	and statement list function for analysis.
+•	Local declaration checks for local variable declared and if there isn’t any, goes to empty and pass the token to statementlist
+•	Statementlist function checks to see if its and expression statement or a compound statement or selection 
+	statement or and iteration statement or a return statement 
+•	Expression statement checks to see if it an expression or ‘ ;’
+•	Selectionstmt function checks to see if it and ‘if’ statement of and “if…else” statement 
+•	Iterationstmt function checks if its “while” statement
+•	Returnstmt function checks if it a return zero or return with an expression
+•	Expression function checks if it is an assignment statement or a simple expression
+•	Simple expression checks if it is an additive expression relop additive expression or just an additive expression
+•	Relop function checks if the current token is of “<=, <, >, >=, ==, !=” used for comparing variables
+•	Additiveexpression function checks of it a term or a an addition expression
+•	Term function checks if it is a factor or mulop statement 
+•	Mulop function checks if it is a multiplication or division expression
+•	Factor checks if it is a parenthesized expression or just a variable or a function call or number
+•	A function call checks if it has an argument or an expression of argument 
+
+
+
+ 
+
+
+  
+
+ 
+
+
+
+
+
+
